@@ -187,11 +187,11 @@ private fun DrawScope.drawShoulder(p: Float) {
 private fun DrawScope.drawGeneral(p: Float) {
     val cx = size.width * .5f
     drawPerson(cx, size.height * .55f - 25f * p, 48f, 110f, 0f)
-    drawCircle(Accent, Offset(cx, size.height * .55f - 25f * p), 70f, style = Stroke(3f))
+    drawCircle(color = Accent, center = Offset(cx, size.height * .55f - 25f * p), radius = 70f, style = Stroke(3f))
 }
 
 private fun DrawScope.drawPerson(cx: Float, bodyY: Float, head: Float, body: Float, rotation: Float) {
-    drawCircle(Figure, Offset(cx, bodyY - body * .55f), head * .42f)
+    drawCircle(color = Figure, center = Offset(cx, bodyY - body * .55f), radius = head * .42f)
     drawLine(Figure, Offset(cx, bodyY - body * .3f), Offset(cx, bodyY + body * .45f), 13f, StrokeCap.Round)
     drawLine(Figure, Offset(cx, bodyY), Offset(cx - 45f, bodyY + 38f), 11f, StrokeCap.Round)
     drawLine(Figure, Offset(cx, bodyY), Offset(cx + 45f, bodyY + 38f), 11f, StrokeCap.Round)
