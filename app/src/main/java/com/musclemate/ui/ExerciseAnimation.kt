@@ -93,8 +93,8 @@ private fun DrawScope.drawFly(p: Float) {
     val spread = 85f - 55f * p
     drawLine(Figure, Offset(cx - 8f, y), Offset(cx - spread, y + 45f), 10f, StrokeCap.Round)
     drawLine(Figure, Offset(cx + 8f, y), Offset(cx + spread, y + 45f), 10f, StrokeCap.Round)
-    drawCircle(Accent, Offset(cx - spread, y + 45f), 7f)
-    drawCircle(Accent, Offset(cx + spread, y + 45f), 7f)
+    drawCircle(color = Accent, center = Offset(cx - spread, y + 45f), radius = 7f)
+    drawCircle(color = Accent, center = Offset(cx + spread, y + 45f), radius = 7f)
 }
 
 private fun DrawScope.drawCurl(p: Float) {
@@ -104,8 +104,8 @@ private fun DrawScope.drawCurl(p: Float) {
     drawPerson(cx, y, 48f, 110f, 0f)
     drawLine(Figure, Offset(cx - 28f, y + 5f), Offset(cx - 45f, y + 58f - lift), 10f, StrokeCap.Round)
     drawLine(Figure, Offset(cx + 28f, y + 5f), Offset(cx + 45f, y + 58f - lift), 10f, StrokeCap.Round)
-    drawCircle(Accent, Offset(cx - 45f, y + 58f - lift), 8f)
-    drawCircle(Accent, Offset(cx + 45f, y + 58f - lift), 8f)
+    drawCircle(color = Accent, center = Offset(cx - 45f, y + 58f - lift), radius = 8f)
+    drawCircle(color = Accent, center = Offset(cx + 45f, y + 58f - lift), radius = 8f)
 }
 
 private fun DrawScope.drawTriceps(p: Float) {
@@ -164,7 +164,7 @@ private fun DrawScope.drawDeadlift(p: Float) {
     val bend = 28f * p
     val hip = Offset(cx + bend, size.height * .52f)
     val shoulder = Offset(cx - bend, size.height * .38f)
-    drawCircle(Figure, Offset(shoulder.x, shoulder.y - 25f), 20f)
+    drawCircle(color = Figure, center = Offset(shoulder.x, shoulder.y - 25f), radius = 20f)
     drawLine(Figure, shoulder, hip, 13f, StrokeCap.Round)
     drawLine(Figure, hip, Offset(cx - 55f, size.height - 28f), 12f, StrokeCap.Round)
     drawLine(Figure, hip, Offset(cx + 55f, size.height - 28f), 12f, StrokeCap.Round)
@@ -180,8 +180,8 @@ private fun DrawScope.drawShoulder(p: Float) {
     drawPerson(cx, y, 48f, 110f, 0f)
     drawLine(Figure, Offset(cx - 25f, y), Offset(cx - 65f, y - 15f - lift), 10f, StrokeCap.Round)
     drawLine(Figure, Offset(cx + 25f, y), Offset(cx + 65f, y - 15f - lift), 10f, StrokeCap.Round)
-    drawCircle(Accent, Offset(cx - 65f, y - 15f - lift), 8f)
-    drawCircle(Accent, Offset(cx + 65f, y - 15f - lift), 8f)
+    drawCircle(color = Accent, center = Offset(cx - 65f, y - 15f - lift), radius = 8f)
+    drawCircle(color = Accent, center = Offset(cx + 65f, y - 15f - lift), radius = 8f)
 }
 
 private fun DrawScope.drawGeneral(p: Float) {
@@ -197,7 +197,7 @@ private fun DrawScope.drawPerson(cx: Float, bodyY: Float, head: Float, body: Flo
     drawLine(Figure, Offset(cx, bodyY), Offset(cx + 45f, bodyY + 38f), 11f, StrokeCap.Round)
     drawLine(Figure, Offset(cx, bodyY + body * .45f), Offset(cx - 42f, bodyY + body), 12f, StrokeCap.Round)
     drawLine(Figure, Offset(cx, bodyY + body * .45f), Offset(cx + 42f, bodyY + body), 12f, StrokeCap.Round)
-    drawCircle(Joint, Offset(cx, bodyY), 6f)
+    drawCircle(color = Joint, center = Offset(cx, bodyY), radius = 6f)
 }
 
 private fun DrawScope.drawBar(a: Offset, b: Offset, angle: Float) {
@@ -206,6 +206,6 @@ private fun DrawScope.drawBar(a: Offset, b: Offset, angle: Float) {
     val dx = cos(angle) * half
     val dy = sin(angle) * half
     drawLine(Accent, Offset(mid.x - dx, mid.y - dy), Offset(mid.x + dx, mid.y + dy), 7f, StrokeCap.Round)
-    drawCircle(Accent, Offset(mid.x - dx, mid.y - dy), 10f)
-    drawCircle(Accent, Offset(mid.x + dx, mid.y + dy), 10f)
+    drawCircle(color = Accent, center = Offset(mid.x - dx, mid.y - dy), radius = 10f)
+    drawCircle(color = Accent, center = Offset(mid.x + dx, mid.y + dy), radius = 10f)
 }
