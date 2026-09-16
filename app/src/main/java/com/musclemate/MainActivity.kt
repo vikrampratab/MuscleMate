@@ -26,6 +26,7 @@ import com.musclemate.data.ExerciseRepository
 import com.musclemate.data.local.AppDatabase
 import com.musclemate.data.local.ExerciseEntity
 import com.musclemate.ui.AppViewModel
+import com.musclemate.ui.ExerciseAnimation
 import com.musclemate.ui.AppViewModelFactory
 
 private val BG = Color(0xFF07090D)
@@ -210,7 +211,9 @@ private fun ExerciseCard(exercise: ExerciseEntity, onClick: () -> Unit) {
             Box(
                 Modifier.size(74.dp).background(Color(0xFF182232), RoundedCornerShape(14.dp)),
                 contentAlignment = Alignment.Center
-            ) { Text("ANIMATION", fontSize = 9.sp, color = BLUE, fontWeight = FontWeight.Bold) }
+            ) {
+                ExerciseAnimation(exercise.name, Modifier.fillMaxSize().padding(6.dp))
+            }
             Column(Modifier.padding(start = 14.dp)) {
                 Text(exercise.name, fontWeight = FontWeight.Bold, fontSize = 17.sp)
                 Text(exercise.targetMuscle + " • " + exercise.equipment, color = Color.Gray, fontSize = 12.sp)
@@ -232,7 +235,9 @@ private fun Detail(exercise: ExerciseEntity?, vm: AppViewModel, nav: NavHostCont
                 Box(
                     Modifier.fillMaxWidth().height(250.dp).background(Color(0xFF182232), RoundedCornerShape(22.dp)),
                     contentAlignment = Alignment.Center
-                ) { Text("LOTTIE PLACEHOLDER\n" + exercise.name, color = BLUE, fontWeight = FontWeight.Bold) }
+                ) {
+                    ExerciseAnimation(exercise.name, Modifier.fillMaxSize().padding(18.dp))
+                }
 
                 Text(exercise.name, fontSize = 28.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 18.dp))
                 Text(exercise.targetMuscle + " • " + exercise.equipment + " • " + exercise.difficulty, color = Color.Gray)
